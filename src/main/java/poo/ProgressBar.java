@@ -7,6 +7,19 @@ public abstract class ProgressBar {
 
     private static final char progressChar = '#';
 
+
+    /**
+     * Uma maneira de limpar o console em terminais Unix
+     *
+     * Esse código não funcionará, por exemplo, quando se executa o programa
+     * dentro do IntelliJ ou mesmo no prompt do Windows
+     */
+    public static void limparTelaTerminalVT100(){
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }
+
+
     /**
      * Desenha uma simples barra de progresso
      */
