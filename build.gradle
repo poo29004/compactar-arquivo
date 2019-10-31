@@ -11,6 +11,15 @@ repositories {
     mavenCentral()
 }
 
+// Indica qual classe que possui método main e assim, qual classe deverá ser executada
+// quando a aplicação estiver empacotada em um arquivo .jar
+// Ex: java -jar compactador-1.0.jar
+jar {
+    manifest {
+        attributes 'Main-Class': 'poo.Principal'
+    }
+}
+
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
