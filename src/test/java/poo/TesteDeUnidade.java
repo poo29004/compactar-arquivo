@@ -1,3 +1,5 @@
+package poo;
+
 import org.junit.Test;
 import poo.ZipUnZip;
 
@@ -69,7 +71,7 @@ public class TesteDeUnidade {
      * Cria um arquivo regular com o tamanho informado
      * @param nomeDoArquivo nome do arquivo
      * @param tamanho tamanho a ser criado. I.e. 1024 * 1024 * 100 ~= 100Mb.
-     * @return
+     * @return true se conseguir compactar
      */
     private boolean criarArquivo(String nomeDoArquivo, long tamanho){
         File f = new File(nomeDoArquivo);
