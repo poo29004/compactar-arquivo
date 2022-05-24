@@ -1,13 +1,17 @@
 package poo;
 
-import org.junit.Test;
+
 import poo.ZipUnZip;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 
-import static org.junit.Assert.assertTrue;
+import org.junit.jupiter.api.Test;
+
+
 
 public class TesteDeUnidade {
 
@@ -18,7 +22,7 @@ public class TesteDeUnidade {
 
         // criando arquivo de 100Mb
         if (criarArquivo(arquivoASerCompactado,1024 * 1024 * 100)){
-            assertTrue("Não foi possível compactar arquivo",ZipUnZip.compressOneFile(arquivoASerCompactado,arquivoZIP));
+            assertTrue(ZipUnZip.compressOneFile(arquivoASerCompactado,arquivoZIP), "Não foi possível compactar arquivo");
         }
         removerArquivo(arquivoASerCompactado);
         removerArquivo(arquivoZIP);
@@ -51,7 +55,7 @@ public class TesteDeUnidade {
         criarArquivo(ultimo, tamanho);
 
         String arquivoZIP = "/tmp/saidaRecursivo.zip";
-        assertTrue("Erro ao compactar diretórios e subdiretórios",ZipUnZip.compressDirectoryRecursively("/tmp/a", arquivoZIP));
+        assertTrue(ZipUnZip.compressDirectoryRecursively("/tmp/a", arquivoZIP),"Erro ao compactar diretórios e subdiretórios");
         removerArquivo(arquivoZIP);
     }
 
@@ -96,6 +100,4 @@ public class TesteDeUnidade {
     private boolean criarDiretorio(String nomeDoDiretorio){
         return  (new File(nomeDoDiretorio)).mkdirs();
     }
-
-
 }
