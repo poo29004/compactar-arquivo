@@ -1,10 +1,4 @@
-# Programação Orientada a Objetos - POO29004
-
-> Engenharia de Telecomunicações
-> 
-> Instituto Federal de Santa Catarina - campus São José
-
-## Compactar e descompactar arquivos ZIP
+# Compactar e descompactar arquivos ZIP
 
 Esse repositório apresenta um exemplo de como descompactar, compactar um arquivo ou um diretório de forma recursiva em Java. 
 
@@ -30,22 +24,19 @@ jar {
 }
 ```
 
-Feito isso, basta executar a tarefa `jar` com o gradle e isso pode ser feito usando o próprio IntelliJ ou usando diretamente o gradle no terminal. 
+Feito isso, execute a tarefa `jar` do gradle:
 
-Com o IntelliJ basta seguir os passos:
-
-1. Abra o projeto no IntelliJ
-2. Abra o painel do Gradle (clique no botão gradle que fica no painel lateral à direita)
-3. Abra o projeto (ex: `compactador`), abra o grupo `Tasks`-> `build`
-4. Clique duas vezes na tarefa `jar`
-5. Será criado o pacote `compactador-1.0.jar` dentro do subdiretório `build/libs`.
+```bash
+./gradlew jar
+```
+Será criado o arquivo `compactador.jar` dentro do subdiretório `build/libs`
 
 ### Executando uma aplicação Java empacotada em um arquivo `.jar`
 
 Para executar a aplicação java empacotada no arquivo `.jar` basta fazer:
 
 ```
-java -jar compactador-1.0.jar
+java -jar compactador.jar
 ```
 
 
